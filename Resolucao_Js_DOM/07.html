@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8 />
+    <title>Change the content of a cell</title>
+    <style type="text/css">
+        body {margin: 30px;} 
+    </style>  
+</head>
+<body>
+    <table id="myTable" border="1">
+        
+    </table>
+    <form>
+        <input type="button" onclick="createTable()" value="Create the table">
+    </form>
+
+    <script>
+       async function createTable(){
+            var linha = window.prompt(`Digite a linha !`)
+            var coluna = window.prompt(`Digite a coluna !`)
+            var tabela = document.getElementById("myTable")
+
+             for (var i=0; i < linha;i=i+1){
+                var x = document.createElement("TR");
+                // x.setAttribute("id", "myTr"+"$i");
+                tabela.appendChild(x)
+                
+                for(var j=0; j < coluna;j++){
+                    var y = document.createElement("TD");               
+                    var t = document.createTextNode("linha"+i+"  "+"Coluna"+j);
+                    y.appendChild(t);
+                    x.appendChild(y);
+                }
+                x.appendChild(y);
+            }
+        }
+    </script>
+</body>
+</html>

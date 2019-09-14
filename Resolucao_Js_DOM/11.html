@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Display Image</title>
+    <style>
+        form{
+            margin: auto;
+        };
+        input{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <form >
+    <img id="imagens" src="" name="canvas" style=""/>
+    <span>
+        <input type="button" onClick="displayImg()" value="Display Random Image">
+    </span>
+    </form>
+    <script>
+    
+        function displayImg(){
+
+            var images = ["http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg",
+        "http://farm1.staticflickr.com/33/45336904_1aef569b30_n.jpg",
+        "http://farm6.staticflickr.com/5211/5384592886_80a512e2c9.jpg"];
+
+            var sizes = [ {width: "240", height: "160"}, {width: "320", height: "195"},{ width: "500", height: "343"}];
+            var index = Math.floor(Math.random() * images.length) ;
+            var random = images[index];
+
+            // var num = Math.floor(Math.random() * (imgArr.length));
+            document.canvas.src = random;
+           document.getElementById("imagens").style= sizes[index]; 
+        }
+
+
+    
+    </script>
+    
+</body>
+</html>
